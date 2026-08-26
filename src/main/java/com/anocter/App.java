@@ -2,7 +2,6 @@ package com.anocter;
 
 import nu.pattern.OpenCV;
 import java.io.IOException;
-import java.util.List;
 
 public class App {
     static void main() throws IOException {
