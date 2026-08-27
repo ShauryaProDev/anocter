@@ -8,7 +8,7 @@ public class App {
         OpenCV.loadLocally();
 
         AnomalyDetector detector = new AnomalyDetector();
-        AnomalyWriter writer = new AnomalyWriter("C:\\Users\\Shaurya-PC\\Documents\\sample");
+        AnomalyWriter writer = new AnomalyWriter("Your Location To Save Footages");
 
         detector.detect(writer, DetectionType.BEEP);
     }
