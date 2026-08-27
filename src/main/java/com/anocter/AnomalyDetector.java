@@ -38,7 +38,7 @@ public class AnomalyDetector {
             double normalizedDiff = diff / 10000;
 
             if (normalizedDiff > 400) {
-                if (detectionType == DetectionType.BEEP) new Thread(BeepType.WARNING.getBeep()).start();
+                if (detectionType == DetectionType.BEEP) Globals.executor.submit(BeepType.WARNING.getBeep());
 
                 Anomaly anomaly = new Anomaly(currentFrame.clone(), Instant.now(), normalizedDiff);
 
@@ -54,6 +54,8 @@ public class AnomalyDetector {
         }
 
         camera.release();
+
+        Globals.executor.shutdown();
     }
 
     public void detect(AnomalyWriter writer, DetectionType  detectionType) {

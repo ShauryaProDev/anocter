@@ -10,6 +10,6 @@ public class App {
         AnomalyDetector detector = new AnomalyDetector();
         AnomalyWriter writer = new AnomalyWriter("C:\\Users\\Shaurya-PC\\Documents\\sample");
 
-        detector.detect(writer, DetectionType.SILENT);
+        detector.detect(writer, DetectionType.BEEP);
     }
 }
